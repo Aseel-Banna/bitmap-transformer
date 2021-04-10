@@ -16,10 +16,11 @@ public class inverTransformation extends Bitmap {
             for(int i=0; i<getImgHeight (); i++) {
                 for(int j=0; j<getImgWidth(); j++) {
                     Color color = new Color(oldImg.getRGB(j, i));
-                    int red = (int)(255-color.getRed());
-                    int green = (int)(255- color.getGreen() );
-                    int blue = (int)(255- color.getBlue());
-                    Color newColor = new Color(red,green,blue);
+                    int red = (int)(color.getRed() * Math.random() );
+                    int green = (int)(color.getGreen() * Math.random() );
+                    int blue = (int)(color.getBlue() * Math.random()  );
+
+                    Color newColor = new Color(blue,green,red);
                     this.newImg.setRGB(j,i,newColor.getRGB());
                 }
             }

@@ -11,15 +11,15 @@ public class VerticalBlackBars extends Bitmap{
     public void blackBarsConverter() {
         try {
             this.newImg=new BufferedImage(getImgWidth(),getImgHeight(),oldImg.getType());
-            for(int i=0; i<getImgWidth(); i++) {
-                for(int j=0; j<getImgHeight (); j++) {
+            for(int i=0; i<getImgHeight (); i++) {
+                for(int j=0; j<getImgWidth(); j++) {
                     Color color = new Color(oldImg.getRGB(j, i));
                     int red = color.getRed();
                     int green = color.getGreen();
                     int blue = color.getBlue();
                     if(j % 30 > 22){
                         red = 0;
-                        green = 0;
+                        green =0;
                         blue = 0;
                     }
                     Color newColor = new Color(red, green, blue);
