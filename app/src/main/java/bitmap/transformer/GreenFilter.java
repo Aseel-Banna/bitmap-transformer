@@ -12,14 +12,14 @@ public class GreenFilter extends Bitmap{
 
         try {
             this.newImg=new BufferedImage(getImgWidth(),getImgHeight(),oldImg.getType());
-            for(int i=0; i<getImgWidth()/2; i++) {
-                for(int j=0; j<getImgHeight (); j++) {
+            for(int i=0; i<getImgHeight (); i++) {
+                for(int j=0; j<getImgWidth(); j++) {
                     Color color = new Color(oldImg.getRGB(j, i));
-                    int red = color.getRed();
-                    int green = 255;
-                    int blue = color.getBlue();
-                    Color newColor = new Color(red+green+blue,
-                            red+green+blue,red+green+blue);
+                    int red = 0;
+                    int green = (int)((color.getGreen()*0.35));
+                    int blue = 0;
+                    Color newColor = new Color(red,
+                            green,blue);
                     this.newImg.setRGB(j,i,newColor.getRGB());
                 }
             }
